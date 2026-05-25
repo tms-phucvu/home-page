@@ -1,29 +1,25 @@
+import AboutSection from "@/features/top/components/sections/about-section"
+import AchievementSection from "@/features/top/components/sections/achievement-section"
+import CertificationSection from "@/features/top/components/sections/certification-section"
+import FormSection from "@/features/top/components/sections/form-section"
+import HeroSection from "@/features/top/components/sections/hero-section"
+import ServiceSection from "@/features/top/components/sections/service-section"
+import WhySection from "@/features/top/components/sections/why-section"
 import SnapScroll from "@/features/top/components/snap-scroll"
 import Footer from "@/shared/components/layout/footer"
 
 export default function TopPage() {
   return (
     <SnapScroll
-      duration={1}
-      ease="power2.inOut"
-      sectionLabels={["About", "Services", "Resources", "AI Drivent Development"]}
+      sectionLabels={["About", "Services", "Why us", "Certifications", "Achievements", "Inquiry"]}
     >
-      <section className="flex h-screen w-full items-center justify-center bg-blue-500">
-        <h1 className="text-5xl font-bold text-white">About</h1>
-      </section>
-
-      <section className="flex h-screen w-full items-center justify-center bg-red-500">
-        <h1 className="text-5xl font-bold text-white">Services</h1>
-      </section>
-
-      <section className="flex h-screen w-full items-center justify-center bg-green-500">
-        <h1 className="text-5xl font-bold text-white">Resources</h1>
-      </section>
-
-      <section className="flex h-screen w-full items-center justify-center bg-orange-500">
-        <h1 className="text-5xl font-bold text-white">AI Drivent Development</h1>
-      </section>
-
+      <HeroSection />
+      <AboutSection />
+      <ServiceSection />
+      <WhySection />
+      <CertificationSection />
+      <AchievementSection />
+      <FormSection />
       <Footer />
     </SnapScroll>
   )

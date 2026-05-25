@@ -30,6 +30,13 @@ export default function SnapScroll({
   const [activeIndex, setActiveIndex] = useState(0)
   const goToRef = useRef<(index: number, fromClick?: boolean) => void>(() => {})
 
+  const showNav =
+    sectionLabels &&
+    sectionLabels.length > 0 &&
+    activeIndex >= 1 &&
+    activeIndex <= sectionLabels.length
+  const activeLabelIndex = activeIndex - 1
+
   useGSAP(
     (_, contextSafe) => {
       const container = containerRef.current!
@@ -99,26 +106,65 @@ export default function SnapScroll({
         {children}
       </div>
 
-      {sectionLabels && sectionLabels.length > 1 && (
+      {sectionLabels && sectionLabels.length > 0 && (
         <nav
-          className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2"
           aria-label="Section navigation"
+          aria-hidden={!showNav}
+          className={cn(
+            "fixed bottom-6 left-1/2 z-50 -translate-x-1/2",
+            "transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
+            showNav
+              ? "pointer-events-auto translate-y-0 opacity-100"
+              : "pointer-events-none translate-y-4 opacity-0",
+          )}
         >
-          <div className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.07] p-1.5 backdrop-blur-md">
+          {/* Desktop: pill labels */}
+          <div
+            className={cn(
+              "border-foreground/10 bg-foreground/[0.07] hidden items-center gap-1.5 rounded-full border p-1.5 backdrop-blur-md md:flex",
+              "transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
+              showNav ? "scale-100" : "scale-90",
+            )}
+          >
             {sectionLabels.map((label, i) => (
               <button
                 key={i}
-                onClick={() => goToRef.current(i, true)}
+                onClick={() => goToRef.current(i + 1, true)}
                 aria-label={label}
+                tabIndex={showNav ? 0 : -1}
                 className={cn(
                   "cursor-pointer rounded-full border-0 px-4 py-1.5 text-[0.65rem] font-normal tracking-widest whitespace-nowrap uppercase transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
-                  i === activeIndex
-                    ? "bg-white/90 font-medium text-black"
-                    : "bg-transparent text-white/40 hover:text-white/60",
+                  i === activeLabelIndex
+                    ? "bg-primary text-foreground font-medium"
+                    : "text-foreground bg-transparent",
                 )}
               >
                 {label}
               </button>
+            ))}
+          </div>
+
+          {/* Mobile: dot indicators */}
+          <div
+            className={cn(
+              "flex items-center gap-2.5 rounded-full px-3 py-2.5 backdrop-blur-md md:hidden",
+              "transition-all duration-1000 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
+              showNav ? "scale-100" : "scale-90",
+            )}
+          >
+            {sectionLabels.map((label, i) => (
+              <button
+                key={i}
+                onClick={() => goToRef.current(i + 1, true)}
+                aria-label={label}
+                tabIndex={showNav ? 0 : -1}
+                className={cn(
+                  "rounded-full transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
+                  i === activeLabelIndex
+                    ? "bg-primary h-2 w-5"
+                    : "bg-foreground/30 hover:bg-foreground/50 h-2 w-2",
+                )}
+              />
             ))}
           </div>
         </nav>

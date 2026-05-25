@@ -10,15 +10,15 @@ import { MobileMenu } from "@/shared/components/header/mobile-menu"
 import { Search } from "lucide-react"
 
 export default function Header() {
-  const { resolvedTheme } = useTheme()
+  const { theme } = useTheme()
 
   return (
     <div className="bg-background fixed top-0 z-50 flex h-16 w-full items-center justify-between px-4 md:px-10 lg:h-20 xl:px-36">
       <div className="flex items-center gap-6 xl:gap-16">
         <Image
-          src={resolvedTheme === "dark" ? "/logo_dark.png" : "/logo_light.png"}
+          src={theme === "dark" ? "/logo_dark.png" : "/logo_light.png"}
           alt="Logo"
-          width={resolvedTheme === "dark" ? 126 : 120}
+          width={theme === "dark" ? 126 : 120}
           height={48}
           className="lg:w-45"
           priority
