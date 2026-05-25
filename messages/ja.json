@@ -1,0 +1,8 @@
+{
+  "HomePage": {
+    "title": "開始するには、page.tsx ファイルを編集してください。",
+    "description": "開始地点や詳しい手順をお探しですか？<templates>Templates</templates> または <learning>Learning</learning> センターをご覧ください。",
+    "deployButton": "今すぐデプロイ",
+    "docButton": "ドキュメント"
+  }
+}

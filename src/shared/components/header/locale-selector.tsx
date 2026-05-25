@@ -8,10 +8,10 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { cn } from "@/lib/utils"
+} from "@/shared/components/ui/dropdown-menu"
+import { cn } from "@/shared/lib/utils"
 import { LOCALES_AVAILABLE } from "@/i18n/routing"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/shared/components/ui/button"
 
 export function LocaleSelector() {
   const locale = useLocale()
