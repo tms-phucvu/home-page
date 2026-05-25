@@ -40,7 +40,7 @@ type MenuItem = {
   content: SubItem[]
 }
 
-const menuItems: MenuItem[] = [
+export const menuItems: MenuItem[] = [
   {
     label: "About",
     card: {
@@ -94,14 +94,14 @@ const menuItems: MenuItem[] = [
 export function NavMenu() {
   return (
     <NavigationMenu className="static">
-      <NavigationMenuList className="gap-2">
+      <NavigationMenuList className="gap-0.5 xl:gap-2">
         {menuItems.map((item) => (
           <NavigationMenuItem key={item.label}>
-            <NavigationMenuTrigger className="hover:text-primary text-md bg-transparent font-normal">
+            <NavigationMenuTrigger className="data-[state=open]:text-primary text-md bg-transparent font-normal">
               {item.label}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="flex gap-8 px-80 py-3">
+              <div className="flex gap-8 px-10 py-3 xl:px-80">
                 <div className="relative h-54 w-76 shrink-0 overflow-hidden rounded-md">
                   <Image
                     src={item.card.image}

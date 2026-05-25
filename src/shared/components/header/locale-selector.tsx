@@ -26,7 +26,7 @@ export function LocaleSelector() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon-lg" className="rounded-full">
+        <Button variant="outline" size="icon-lg" className="rounded-full max-md:border-none">
           <Globe />
         </Button>
       </DropdownMenuTrigger>

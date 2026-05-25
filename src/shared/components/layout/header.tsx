@@ -6,33 +6,48 @@ import { LocaleSelector } from "@/shared/components/header/locale-selector"
 import { ThemeSelector } from "@/shared/components/header/theme-selector"
 import { Button } from "@/shared/components/ui/button"
 import { NavMenu } from "@/shared/components/header/nav-menu"
+import { MobileMenu } from "@/shared/components/header/mobile-menu"
 import { Search } from "lucide-react"
 
 export default function Header() {
   const { resolvedTheme } = useTheme()
 
   return (
-    <div className="bg-background fixed top-0 z-50 flex h-20 w-full items-center justify-between px-36">
-      <div className="flex items-center gap-16">
+    <div className="bg-background fixed top-0 z-50 flex h-16 w-full items-center justify-between px-4 md:px-10 lg:h-20 xl:px-36">
+      <div className="flex items-center gap-6 xl:gap-16">
         <Image
           src={resolvedTheme === "dark" ? "/logo_dark.png" : "/logo_light.png"}
           alt="Logo"
-          width={180}
-          height={60}
+          width={resolvedTheme === "dark" ? 126 : 120}
+          height={48}
+          className="lg:w-45"
           priority
         />
-        <NavMenu />
+        <div className="hidden lg:block">
+          <NavMenu />
+        </div>
       </div>
-      <div className="flex h-14 items-center gap-2">
+
+      <div className="flex h-14 items-center gap-1 lg:gap-2">
         <LocaleSelector />
         <ThemeSelector />
-        <Button variant="outline" size="icon-lg" className="relative rounded-full">
+        <Button
+          variant="outline"
+          size="icon-lg"
+          className="relative rounded-full max-md:border-none"
+        >
           <Search />
           <span className="sr-only">Search</span>
         </Button>
-        <Button size={"lg"} className="rounded-full px-8 py-5 text-lg">
+        <Button
+          size="lg"
+          className="hidden rounded-full px-5 py-4 text-base sm:flex lg:px-8 lg:py-5 lg:text-lg"
+        >
           Inquiry
         </Button>
+        <div className="lg:hidden">
+          <MobileMenu />
+        </div>
       </div>
     </div>
   )
