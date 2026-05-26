@@ -5,7 +5,7 @@ import FormSection from "@/features/top/components/sections/form-section"
 import HeroSection from "@/features/top/components/sections/hero-section"
 import ServiceSection from "@/features/top/components/sections/service-section"
 import WhySection from "@/features/top/components/sections/why-section"
-import SnapScroll from "@/features/top/components/snap-scroll"
+import SnapScroll from "@/features/top/components/effects/snap-scroll"
 import Footer from "@/shared/components/layout/footer"
 
 export default function TopPage() {

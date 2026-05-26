@@ -13,7 +13,7 @@ export default function Header() {
   const { theme } = useTheme()
 
   return (
-    <div className="bg-background fixed top-0 z-50 flex h-16 w-full items-center justify-between px-4 md:px-10 lg:h-20 xl:px-36">
+    <div className="bg-background shadow-foreground/10 fixed top-0 z-50 flex h-16 w-full items-center justify-between px-4 shadow-lg md:px-10 lg:h-20 xl:px-36">
       <div className="flex items-center gap-6 xl:gap-16">
         <Image
           src={theme === "dark" ? "/logo_dark.png" : "/logo_light.png"}
