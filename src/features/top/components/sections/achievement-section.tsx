@@ -75,7 +75,7 @@ export default function AchievementSection() {
             <div
               className="relative flex h-120 flex-col justify-between overflow-hidden rounded-[24px] p-8 text-white"
               style={{
-                backgroundColor: "#0e6e8a",
+                backgroundColor: "#073d4f",
                 backgroundImage:
                   "linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)",
                 backgroundSize: "24px 24px",

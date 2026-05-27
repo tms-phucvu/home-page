@@ -3,7 +3,7 @@ import MagicBento from "@/features/top/components/effects/magic-bento"
 export default function WhySection() {
   return (
     <section className="flex h-screen w-full flex-col items-center justify-center">
-      <h1 className="text-5xl font-bold">Why TOMOSIA</h1>
+      <h1 className="mb-6 text-5xl font-bold">Why TOMOSIA</h1>
       <MagicBento
         enableStars
         enableSpotlight
