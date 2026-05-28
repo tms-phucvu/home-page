@@ -21,8 +21,8 @@ const LinkedInIcon = () => (
 export default function Footer() {
   return (
     <section className="bg-border grid h-screen w-full grid-cols-1 pt-16 sm:grid-cols-3">
-      <div className="flex flex-col items-baseline justify-center px-3 max-sm:text-sm sm:col-span-2 sm:px-16 xl:px-36">
-        <div className="flex flex-col gap-8 max-sm:gap-3">
+      <div className="flex flex-col items-baseline justify-center px-3 max-md:text-sm sm:col-span-2 sm:px-16 xl:px-36">
+        <div className="flex flex-col gap-8 max-md:gap-3">
           <h1 className="text-4xl font-bold xl:text-5xl">Let Us Accompany You</h1>
           <div className="grid grid-cols-2 gap-5">
             <p>About</p>
@@ -31,7 +31,7 @@ export default function Footer() {
             <p>AI Driven Development</p>
           </div>
         </div>
-        <div className="mt-10 flex flex-col gap-4 max-sm:mt-5 max-sm:gap-1">
+        <div className="mt-10 flex flex-col gap-4 max-md:mt-5 max-md:gap-1">
           <h1 className="text-2xl font-bold xl:text-3xl">TOMOSIA Company</h1>
           <div className="flex flex-col gap-4">
             <p>
@@ -76,7 +76,7 @@ export default function Footer() {
             <hr className="border-t border-gray-300" />
             <div className="mt-4 flex items-center justify-between">
               <p className="text-sm text-gray-500">Copyright ©2023 TOMOSIA Viet Nam</p>
-              <div className="flex items-center gap-3 max-sm:gap-1">
+              <div className="flex items-center gap-3 max-md:gap-1">
                 <a
                   href="#"
                   className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-300 text-gray-500 transition-colors hover:border-gray-500 hover:text-gray-700"
@@ -100,7 +100,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex h-full items-center justify-center py-30 max-sm:hidden">
+      <div className="flex h-full items-center justify-center py-30 max-md:hidden">
         <RippleGrid
           enableRainbow={false}
           gridColor="#06B6D4"
