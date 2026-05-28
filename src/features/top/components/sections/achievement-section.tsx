@@ -59,10 +59,10 @@ const projects = [
 
 export default function AchievementSection() {
   return (
-    <section className="bg-border/50 flex min-h-screen w-full items-center justify-center px-1 sm:px-36">
+    <section className="bg-border/50 flex min-h-screen w-full items-center justify-center px-4 sm:px-18 lg:px-36">
       <Carousel opts={{ align: "start" }} className="w-full">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-3xl font-medium xl:text-5xl">Achievements</h2>
+        <div className="mb-2 flex items-center justify-between xl:mb-8">
+          <h2 className="text-2xl font-medium xl:text-5xl">Achievements</h2>
           <div className="flex gap-2">
             <CarouselPrevious className="static h-10 w-10 translate-y-0 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-50" />
             <CarouselNext className="static h-10 w-10 translate-y-0 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-50" />
@@ -73,7 +73,7 @@ export default function AchievementSection() {
           {/* Banner Card — Cyan */}
           <CarouselItem className="pl-4 md:basis-1/2 lg:basis-[32%] xl:basis-[29%]">
             <div
-              className="relative flex h-120 flex-col justify-between overflow-hidden rounded-[24px] p-8 text-white"
+              className="relative flex h-[54vh] flex-col justify-between overflow-hidden rounded-[24px] p-8 text-white"
               style={{
                 backgroundColor: "#073d4f",
                 backgroundImage:
@@ -105,10 +105,10 @@ export default function AchievementSection() {
           {projects.map((project) => (
             <CarouselItem
               key={project.id}
-              className="pl-4 md:basis-1/2 lg:basis-[27%] xl:basis-[20%]"
+              className="pl-4 sm:basis-1/2 lg:basis-[27%] xl:basis-[20%]"
             >
               <div
-                className="group relative isolate h-120 transform-gpu cursor-pointer overflow-hidden rounded-[24px] will-change-transform"
+                className="group relative isolate h-[54vh] transform-gpu cursor-pointer overflow-hidden rounded-[24px] will-change-transform"
                 tabIndex={0}
                 onMouseEnter={(e) => {
                   const focused = document.activeElement

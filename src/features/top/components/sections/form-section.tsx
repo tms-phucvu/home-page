@@ -22,14 +22,14 @@ const inquiryItems = ["Your opinion", "Consultation", "Estimate"] as const
 export default function FormSection() {
   return (
     <section className="flex min-h-screen w-full items-center justify-center p-8">
-      <div className="border-border grid w-full max-w-4xl grid-cols-1 overflow-hidden rounded-2xl border lg:grid-cols-3">
+      <div className="border-border grid w-full max-w-4xl grid-cols-1 overflow-hidden sm:rounded-2xl sm:border lg:grid-cols-3">
         {/* Gradient panel */}
-        <div className="relative flex min-h-80 items-center justify-center p-6 max-sm:hidden lg:col-span-1">
+        <div className="relative flex items-center justify-center p-6 max-lg:hidden lg:col-span-1">
           <div className="h-full w-full rounded-xl bg-linear-to-br from-cyan-100 to-pink-100"></div>
         </div>
 
         {/* Form panel */}
-        <div className="flex flex-col justify-center gap-5 p-7 lg:col-span-2">
+        <div className="flex flex-col justify-center gap-5 sm:p-7 lg:col-span-2">
           <FieldSet>
             <FieldLegend>Inquiry</FieldLegend>
             <FieldDescription>

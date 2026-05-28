@@ -423,6 +423,40 @@ const useMobileDetection = () => {
   return isMobile
 }
 
+interface CardContentProps {
+  title: string
+  description: string
+}
+
+export function CardContent({ title, description }: CardContentProps) {
+  return (
+    <>
+      <h3 className="text-foreground mb-2 text-[0.95rem] leading-[1.4] font-medium">{title}</h3>
+      <p className="text-foreground m-0 text-xs leading-none opacity-65 sm:leading-[1.6]">
+        {description}
+      </p>
+    </>
+  )
+}
+
+interface StatCardProps {
+  statNumber: number
+  statLabel: string
+}
+
+function StatCard({ statNumber, statLabel }: StatCardProps) {
+  return (
+    <>
+      <span className="text-primary mb-2 block text-2xl leading-none font-bold sm:text-4xl">
+        <CountUp end={statNumber} duration={1.5} enableScrollSpy /> +
+      </span>
+      <span className="text-foreground text-[9px] tracking-[0.08em] uppercase opacity-50 sm:text-xs">
+        {statLabel}
+      </span>
+    </>
+  )
+}
+
 const MagicBento: React.FC<BentoProps> = ({
   enableStars = true,
   enableSpotlight = true,
@@ -496,77 +530,6 @@ const MagicBento: React.FC<BentoProps> = ({
           border-radius: 50%;
           z-index: -1;
         }
-
-        .bento-grid-top {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 0.5rem;
-        }
-
-        @media (min-width: 640px) {
-          .bento-grid-top {
-            grid-template-columns: repeat(3, 1fr);
-          }
-        }
-
-        .bento-grid-bottom {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 0.5rem;
-          margin-top: 0.5rem;
-        }
-
-        @media (max-width: 480px) {
-          .bento-grid-bottom {
-            grid-template-columns: 1fr;
-          }
-        }
-
-        .card-title {
-          font-size: 0.95rem;
-          font-weight: 500;
-          margin: 0 0 0.5rem 0;
-          line-height: 1.4;
-          color: var(--foreground);
-        }
-
-        .card-description {
-          font-size: 0.75rem;
-          line-height: 1.6;
-          opacity: 0.65;
-          margin: 0;
-          color: var(--foreground);
-        }
-
-        .stat-number {
-          font-size: 2.25rem;
-          font-weight: 700;
-          line-height: 1;
-          color: var(--primary);
-          margin-bottom: 0.35rem;
-          display: block;
-        }
-
-        .stat-label {
-          font-size: 0.72rem;
-          letter-spacing: 0.08em;
-          text-transform: uppercase;
-          opacity: 0.5;
-          color: var(--foreground);
-        }
-
-        .section-heading {
-          font-size: 1.5rem;
-          font-weight: 300;
-          color: var(--foreground);
-          margin: 0 0 1.25rem 0.25rem;
-          letter-spacing: -0.01em;
-        }
-
-        .section-heading strong {
-          font-weight: 600;
-          color: var(--primary);
-        }
       `}</style>
 
       {enableSpotlight && (
@@ -585,12 +548,12 @@ const MagicBento: React.FC<BentoProps> = ({
         ref={gridRef}
       >
         {/* Top row: 3 content cards */}
-        <div className="bento-grid-top">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
           {contentCards.map((card, index) =>
             enableStars ? (
               <ParticleCard
                 key={index}
-                className={baseCardClass("p-5")}
+                className={baseCardClass("p-4 sm:p-5")}
                 style={baseCardStyle}
                 disableAnimations={shouldDisableAnimations}
                 particleCount={particleCount}
@@ -599,26 +562,24 @@ const MagicBento: React.FC<BentoProps> = ({
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
               >
-                <h3 className="card-title">{card.title}</h3>
-                <p className="card-description">{card.description}</p>
+                <CardContent title={card.title || ""} description={card.description || ""} />
               </ParticleCard>
             ) : (
               <div key={index} className={baseCardClass("p-5")} style={baseCardStyle}>
-                <h3 className="card-title">{card.title}</h3>
-                <p className="card-description">{card.description}</p>
+                <CardContent title={card.title || ""} description={card.description || ""} />
               </div>
             ),
           )}
         </div>
 
         {/* Bottom row: 3 stat cards */}
-        <div className="bento-grid-bottom">
+        <div className="mt-2 grid grid-cols-3 gap-2">
           {statCards.map((card, index) =>
             enableStars ? (
               <ParticleCard
                 key={index}
                 className={baseCardClass(
-                  "flex flex-col items-center justify-center p-5 text-center",
+                  "flex min-h-24! flex-col items-center justify-center p-1.5 py-0 text-center sm:p-5",
                 )}
                 style={{ ...baseCardStyle, minHeight: "120px" }}
                 disableAnimations={shouldDisableAnimations}
@@ -628,23 +589,17 @@ const MagicBento: React.FC<BentoProps> = ({
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
               >
-                <span className="stat-number">
-                  <CountUp end={Number(card.statNumber)} duration={1.5} enableScrollSpy /> +
-                </span>
-                <span className="stat-label">{card.statLabel}</span>
+                <StatCard statNumber={Number(card.statNumber)} statLabel={card.statLabel || ""} />
               </ParticleCard>
             ) : (
               <div
                 key={index}
                 className={baseCardClass(
-                  "flex flex-col items-center justify-center p-5 text-center",
+                  "flex flex-col items-center justify-center p-1.5 text-center sm:p-5",
                 )}
                 style={{ ...baseCardStyle, minHeight: "120px" }}
               >
-                <span className="stat-number">
-                  <CountUp end={Number(card.statNumber)} duration={1.5} enableScrollSpy /> +
-                </span>
-                <span className="stat-label">{card.statLabel}</span>
+                <StatCard statNumber={Number(card.statNumber)} statLabel={card.statLabel || ""} />
               </div>
             ),
           )}

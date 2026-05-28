@@ -22,8 +22,10 @@ export default function AboutSection() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center gap-4 text-center text-white">
-        <h1 className="text-5xl font-bold drop-shadow-lg">TOMOSIA | 5.0 Solutions Company</h1>
-        <p className="max-w-xl">
+        <h1 className="text-2xl font-bold drop-shadow-lg lg:text-5xl">
+          TOMOSIA | 5.0 Solutions Company
+        </h1>
+        <p className="lg-text-md max-w-xl text-sm">
           {`TOMOSIA is a group of talented engineers with diverse information technology skills. Our
           mission is to leverage the individual knowledge and experience, as well as our teamwork
           and organizational learning, to derive optimal solutions to our clients' IT challenges.`}

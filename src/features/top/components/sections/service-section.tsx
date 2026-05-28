@@ -60,17 +60,17 @@ const services = [
 
 export default function ServiceSection() {
   return (
-    <section className="bg-border/50 flex min-h-screen w-full items-center justify-center px-1 pt-8 sm:px-64">
+    <section className="bg-border/50 flex min-h-screen w-full items-center justify-center px-6 pt-8 sm:px-20 xl:px-64">
       <Carousel opts={{ align: "start", loop: true }} className="w-full">
-        <div className="mb-6 flex flex-col items-center justify-center gap-3">
-          <h2 className="text-3xl font-medium xl:text-5xl">Service</h2>
-          <div className="max-w-4xl text-center">
+        <div className="mb-1.5 flex flex-col items-center justify-center gap-1 sm:mb-4 sm:gap-3">
+          <h2 className="text-xl font-medium lg:text-3xl">Service</h2>
+          <div className="lg:text-md max-w-3xl text-center text-xs">
             At TOMOSIA, we can meet user needs with our extensive experience and track record in app
             and web system development, from development to system operation of recommendation
             systems, prediction systems, and customer-specific chatbots. In addition to development
             and operation, you can also rely on us for IT consulting services.
           </div>
-          <Button variant={"outline"} className="px-4 py-5">
+          <Button variant={"outline"} className="sm:text-md text-xs sm:px-4 sm:py-5">
             Business Details
           </Button>
         </div>
@@ -80,10 +80,10 @@ export default function ServiceSection() {
           {services.map((service) => (
             <CarouselItem
               key={service.id}
-              className="pl-4 md:basis-1/2 lg:basis-[27%] xl:basis-[20%]"
+              className="pl-4 sm:basis-1/2 lg:basis-[34%] xl:basis-[23%]"
             >
               <div
-                className="group relative isolate h-120 transform-gpu cursor-pointer overflow-hidden rounded-[24px] will-change-transform"
+                className="group relative isolate h-[50vh] transform-gpu cursor-pointer overflow-hidden rounded-[24px] will-change-transform"
                 tabIndex={0}
                 onMouseEnter={(e) => {
                   const focused = document.activeElement
@@ -125,8 +125,8 @@ export default function ServiceSection() {
         </CarouselContent>
         <div className="mt-4 flex items-center justify-end">
           <div className="mr-2 flex gap-2">
-            <CarouselPrevious className="static size-16 translate-y-0 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-50" />
-            <CarouselNext className="static size-16 translate-y-0 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-50" />
+            <CarouselPrevious className="static size-12 translate-y-0 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 lg:size-16" />
+            <CarouselNext className="static size-12 translate-y-0 rounded-full border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 lg:size-16" />
           </div>
         </div>
       </Carousel>
