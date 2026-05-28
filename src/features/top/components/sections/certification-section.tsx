@@ -2,46 +2,45 @@ import { CertificateCard } from "@/features/top/components/custom/certificate-ca
 import { CometCard } from "@/features/top/components/effects/comet-card"
 import Stack from "@/features/top/components/effects/stack"
 import Image from "next/image"
+import { useLocale, useTranslations } from "next-intl"
 
-const certificates = [
-  {
-    name: "ISO 9001:2015",
-    description: "Quality Management System Standards",
-    imageUrl: "/certificate1.png",
-  },
-  {
-    name: "ISO 27001:2022",
-    description: "Information Security Management System Standards",
-    imageUrl: "/certificate2.png",
-  },
-  {
-    name: "JDXP",
-    description:
-      "JDXP stands for Japan Digital Transformation (DX) Partners, and it is an alliance organization comprised of companies in Vietnam that provide DX development and DX solutions.",
-    imageUrl: "/certificate3.png",
-  },
-]
-
-const mobileImages = [
+const enMobileImages = [
   "/mobile_certificate1.png",
   "/mobile_certificate2.png",
   "/mobile_certificate3.png",
 ]
 
+const jaMobileImages = [
+  "/ja_mobile_certificate1.png",
+  "/ja_mobile_certificate2.png",
+  "/ja_mobile_certificate3.png",
+]
+
+const certKeys = ["iso9001", "iso27001", "jdxp"] as const
+
+const certImages: Record<string, string> = {
+  iso9001: "/certificate1.png",
+  iso27001: "/certificate2.png",
+  jdxp: "/certificate3.png",
+}
+
 export default function CertificationSection() {
+  const t = useTranslations("homePage.certificationSection")
+  const locale = useLocale()
+
+  const mobileImages = locale === "ja" ? jaMobileImages : enMobileImages
+
   return (
     <section className="flex h-screen w-full flex-col items-center justify-center gap-4 px-4">
-      <h1 className="text-2xl font-bold md:text-5xl">Certifications</h1>
+      <h1 className="text-2xl font-bold md:text-5xl">{t("heading")}</h1>
       <div className="mb-10 max-w-md text-center text-xs md:max-w-xl md:text-lg">
-        TOMOSIA is constantly striving to improve the company and plans to obtain globally
-        recognized certifications. Furthermore, TOMOSIA actively participates in collaborations and
-        plans to grow together with others.
+        {t("description")}
       </div>
 
       {/* Mobile: Stack */}
       <div className="h-55 w-72 sm:h-70 sm:w-93 xl:hidden">
         <Stack
-          randomRotation
+          key={locale}
           sensitivity={160}
           sendToBackOnClick
           cards={mobileImages.map((src, i) => (
@@ -57,12 +56,12 @@ export default function CertificationSection() {
 
       {/* Desktop: CometCard */}
       <div className="hidden gap-8 xl:flex">
-        {certificates.map((cert) => (
-          <CometCard key={cert.name}>
+        {certKeys.map((key) => (
+          <CometCard key={key}>
             <CertificateCard
-              name={cert.name}
-              description={cert.description}
-              imageUrl={cert.imageUrl}
+              name={t(key)}
+              description={t(`${key}_desc`)}
+              imageUrl={certImages[key]}
             />
           </CometCard>
         ))}

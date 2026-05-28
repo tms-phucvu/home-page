@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/shared/components/ui/button"
 import {
   Combobox,
@@ -17,9 +18,13 @@ import {
 } from "@/shared/components/ui/field"
 import { Input } from "@/shared/components/ui/input"
 import { Textarea } from "@/shared/components/ui/textarea"
-const inquiryItems = ["Your opinion", "Consultation", "Estimate"] as const
+import { useTranslations } from "next-intl"
 
 export default function FormSection() {
+  const t = useTranslations("homePage.formSection")
+
+  const inquiryItems = t.raw("inquiryItems") as string[]
+
   return (
     <section className="flex min-h-screen w-full items-center justify-center p-8">
       <div className="border-border grid w-full max-w-4xl grid-cols-1 overflow-hidden sm:rounded-2xl sm:border lg:grid-cols-3">
@@ -31,19 +36,16 @@ export default function FormSection() {
         {/* Form panel */}
         <div className="flex flex-col justify-center gap-5 sm:p-7 lg:col-span-2">
           <FieldSet>
-            <FieldLegend>Inquiry</FieldLegend>
-            <FieldDescription>
-              Please feel free to contact us with any questions, inquiries, or requests for quotes.
-              We will get back to you after reviewing your message
-            </FieldDescription>
+            <FieldLegend>{t("legend")}</FieldLegend>
+            <FieldDescription>{t("description")}</FieldDescription>
             <FieldGroup>
               <div className="grid grid-cols-2 gap-4">
                 <Field>
-                  <FieldLabel htmlFor="item">Inquiry Items</FieldLabel>
+                  <FieldLabel htmlFor="item">{t("item_label")}</FieldLabel>
                   <Combobox items={inquiryItems}>
-                    <ComboboxInput placeholder="Choose inquiry items" />
+                    <ComboboxInput placeholder={t("item_placeholder")} />
                     <ComboboxContent>
-                      <ComboboxEmpty>No items found.</ComboboxEmpty>
+                      <ComboboxEmpty>{t("item_empty")}</ComboboxEmpty>
                       <ComboboxList>
                         {inquiryItems.map((item) => (
                           <ComboboxItem key={item} value={item}>
@@ -55,37 +57,37 @@ export default function FormSection() {
                   </Combobox>
                 </Field>
                 <Field>
-                  <FieldLabel htmlFor="companyName">Company/Organization Name</FieldLabel>
-                  <Input id="companyName" type="text" placeholder="Example: TOMOSIA Co., Ltd." />
+                  <FieldLabel htmlFor="companyName">{t("company_label")}</FieldLabel>
+                  <Input id="companyName" type="text" placeholder={t("company_placeholder")} />
                 </Field>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <Field>
-                  <FieldLabel htmlFor="name">Your name (in Kanji)</FieldLabel>
-                  <Input id="name" type="text" placeholder="Please enter your name correctly." />
+                  <FieldLabel htmlFor="name">{t("name_label")}</FieldLabel>
+                  <Input id="name" type="text" placeholder={t("name_placeholder")} />
                 </Field>
                 <Field>
-                  <FieldLabel htmlFor="phonetic">Phonetic spelling</FieldLabel>
-                  <Input id="phonetic" type="text" placeholder="Please enter your information." />
+                  <FieldLabel htmlFor="phonetic">{t("phonetic_label")}</FieldLabel>
+                  <Input id="phonetic" type="text" placeholder={t("phonetic_placeholder")} />
                 </Field>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <Field>
-                  <FieldLabel htmlFor="email">Email address</FieldLabel>
-                  <Input id="email" type="text" placeholder="Please enter your information." />
+                  <FieldLabel htmlFor="email">{t("email_label")}</FieldLabel>
+                  <Input id="email" type="text" placeholder={t("email_placeholder")} />
                 </Field>
                 <Field>
-                  <FieldLabel htmlFor="phone">Telephone number</FieldLabel>
-                  <Input id="phone" type="text" placeholder="Please enter your information." />
+                  <FieldLabel htmlFor="phone">{t("phone_label")}</FieldLabel>
+                  <Input id="phone" type="text" placeholder={t("phone_placeholder")} />
                 </Field>
               </div>
               <Field>
-                <FieldLabel htmlFor="details">Inquiry details</FieldLabel>
-                <Textarea id="details" placeholder="Please enter your inquiry details." />
+                <FieldLabel htmlFor="details">{t("details_label")}</FieldLabel>
+                <Textarea id="details" placeholder={t("details_placeholder")} />
               </Field>
               <Field orientation="horizontal">
                 <Button type="submit" variant={"outline"}>
-                  Submit
+                  {t("submit")}
                 </Button>
               </Field>
             </FieldGroup>

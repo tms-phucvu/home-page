@@ -1,8 +1,154 @@
 {
-  "HomePage": {
-    "title": "開始するには、page.tsx ファイルを編集してください。",
-    "description": "開始地点や詳しい手順をお探しですか？<templates>Templates</templates> または <learning>Learning</learning> センターをご覧ください。",
-    "deployButton": "今すぐデプロイ",
-    "docButton": "ドキュメント"
+  "homePage": {
+    "sectionLabels": {
+      "about": "私たちについて",
+      "services": "サービス",
+      "whyUs": "選ばれる理由",
+      "certifications": "認定資格",
+      "achievements": "実績",
+      "inquiry": "お問い合わせ"
+    },
+    "aboutSection": {
+      "label": "会社概要",
+      "title": "TOMOSIA | 5.0ソリューションカンパニー",
+      "description": "TOMOSIAは、多様なITスキルを持つ優秀なエンジニア集団です。私たちの使命は、各メンバーの知識と経験、そしてチームワークと組織的な学習を活かし、お客様が抱えるIT課題に対して最適なソリューションを提供することです。",
+      "button": "会社案内"
+    },
+    "serviceSection": {
+      "heading": "サービス",
+      "description": "TOMOSIAは、アプリ・Webシステム開発における豊富な経験と実績をもとに、レコメンドシステム・予測システム・カスタマイズチャットボットの開発から運用まで、幅広いニーズにお応えします。開発・運用に加え、ITコンサルティングサービスもご利用いただけます。",
+      "cta": "事業内容",
+      "readMore": "詳しく見る",
+      "web": "Webシステム開発",
+      "web_desc": "Ruby・Python・PHPなどを用いたWebシステムを開発します。フロントエンドからバックエンド、サーバー構築・デプロイまで幅広いニーズに対応します。",
+      "chatbot": "チャットボット",
+      "chatbot_desc": "ChatGPT技術をベースに、LINEやFacebook Messenger等のAPIと連携し、顧客対応・問い合わせ・予約受付を自動化します。",
+      "app": "アプリ開発",
+      "app_desc": "スマートホームデバイス連携・写真管理・ショッピングアプリ・ライブ配信など、IoTを活用した多様なプロジェクトに対応します。",
+      "dx": "業務効率化DX",
+      "dx_desc": "DX推進を支援するため、システム開発のあらゆる側面をカバーするフルサイクルサービスを提供し、業務効率の向上を実現します。",
+      "ai": "AI開発",
+      "ai_desc": "AI・データ分析・機械学習の専門サービスを提供します。最先端技術を活用し、ビジネス課題を解決する最適なソリューションを構築します。",
+      "bigdata": "ビッグデータ",
+      "bigdata_desc": "Webデータ収集・データベース構築から、手動データラベリング・カテゴリ分類まで、時間とコストを削減しながら効率的にデータ作成プロセスを実行します。",
+      "mgpt": "MGPT - Chatbot 5.0",
+      "mgpt_desc": "ChatGPT技術を搭載し、LINEおよびFacebook Messenger APIと連携したMGPTは、問い合わせ・FAQ・予約対応をシームレスに処理します。"
+    },
+    "whySection": {
+      "rapidly": "急成長中の企業",
+      "rapidly_desc": "2023年8月時点で約120名の社員が在籍し、積極的な採用活動を通じて急速に拡大しています。今年の目標は150名です。5名から20名規模のスタッフやチームの増員にも柔軟に対応できます。",
+      "japanese": "日本語対応と日本式職場文化",
+      "japanese_desc": "BrSEおよびプロジェクトマネージャーチームが正確な翻訳を担保します。また、日本での就労・留学経験を持つメンバーが日本のビジネス文化を深く理解しています。",
+      "quality": "品質管理",
+      "quality_desc": "ISO 9001およびISO 27001を取得済みで、CMMIの取得準備中です。テストチームおよびPMOチームによるクロスプロジェクト管理体制を整備し、納品前には必ず品質確認を実施しています。",
+      "stat_projects": "完了プロジェクト",
+      "stat_customers": "顧客数",
+      "stat_staff": "優秀なスタッフ"
+    },
+    "certificationSection": {
+      "heading": "認定資格",
+      "title": "達成証明書",
+      "description": "TOMOSIAは常に企業改善に努め、国際的に認められた認証の取得を目指しています。また、積極的にコラボレーションに参加し、他者と共に成長することを目標としています。",
+      "iso9001": "ISO 9001:2015",
+      "iso9001_desc": "品質マネジメントシステム規格",
+      "iso27001": "ISO 27001:2022",
+      "iso27001_desc": "情報セキュリティマネジメントシステム規格",
+      "jdxp": "JDXP",
+      "jdxp_desc": "JDXPはJapan Digital Transformation（DX）Partnersの略で、ベトナムのDX開発・DXソリューションを提供する企業で構成されたアライアンス組織です。"
+    },
+    "achievementSection": {
+      "heading": "実績",
+      "bannerTitle": "200件以上のプロジェクトを成功",
+      "bannerDesc": "私たちの開発実績の一部をご紹介します。コスト削減だけでなく、人手不足の解消にも貢献しています。",
+      "readMore": "詳しく見る",
+      "aiInterview": "AI自動面接サービス",
+      "aiInterview_desc": "採用を革新する — TOMOSIAの「AI自動面接サービス」が人材選考の効率と精度を劇的に向上させます。",
+      "aiResponse": "AI自動応答システム（PoC）",
+      "aiResponse_desc": "AI搭載の自動応答システムが小売店の未来を変革。繁忙時間でも安心の24時間予約サポートを実現します。",
+      "gulliver": "GULLIVER AUTO",
+      "gulliver_desc": "ガリバーオートはアプリで車の査定・購入プロセスをすべて完結できます。チャットで査定に関する質問や相談が気軽にでき、営業電話もないため安心してご利用いただけます。",
+      "wakumo": "WAKUMO",
+      "wakumo_desc": "Wakumoは今すぐできる仕事が見つかる日雇いマッチングアプリです！好きな時間に好きなだけ働けて、面倒な面接や履歴書不要、即日払いにも対応しています！",
+      "qlear": "QLEAR",
+      "qlear_desc": "独自のQRコードジェネレーターとキャンペーンサイト作成ツールを開発。企業が多彩なキャンペーン施策を「簡単」かつ「低コスト」で実施でき、個性的なQRコードのデザインでキャンペーンへの注目を集めます。",
+      "coincome": "COINCOME WALLET",
+      "coincome_desc": "COINCOME Walletは、Ethereum・Tether・独自通貨「CIM」をスマートフォンで簡単に管理・送受信できる分散型ウォレットアプリ（iOS・Android対応）です。",
+      "kiroku": "KIROKU",
+      "kiroku_desc": "「kiroku」はシェアしたい人とつながるアルバム記録アプリです。お子さんの成長を残したい方にも、遠くに住む両親の様子が気になる方にも、写真・動画・コメントで記録を残せます。"
+    },
+    "formSection": {
+      "legend": "お問い合わせ",
+      "description": "ご質問・ご相談・お見積りなど、お気軽にお問い合わせください。内容を確認後、折り返しご連絡いたします。",
+      "submit": "送信する",
+      "inquiryItems": ["ご意見", "ご相談", "お見積り"],
+      "item_label": "お問い合わせ種別",
+      "item_placeholder": "種別を選択してください",
+      "item_empty": "該当する項目がありません。",
+      "company_label": "会社名・組織名",
+      "company_placeholder": "例：株式会社TOMOSIA",
+      "name_label": "お名前（漢字）",
+      "name_placeholder": "正確にご入力ください。",
+      "phonetic_label": "フリガナ",
+      "phonetic_placeholder": "ご入力ください。",
+      "email_label": "メールアドレス",
+      "email_placeholder": "ご入力ください。",
+      "phone_label": "電話番号",
+      "phone_placeholder": "ご入力ください。",
+      "details_label": "お問い合わせ内容",
+      "details_placeholder": "お問い合わせ内容をご入力ください。"
+    }
+  },
+  "layout": {
+    "header": {
+      "about": {
+        "label": "会社概要",
+        "btn": "詳しく見る",
+        "ourStory": "私たちのストーリー",
+        "ourStory_desc": "ミッションと価値観について",
+        "team": "チーム",
+        "team_desc": "会社を支えるメンバーを紹介",
+        "careers": "採用情報",
+        "careers_desc": "一緒に成長しませんか"
+      },
+      "services": {
+        "label": "サービス",
+        "btn": "サービス一覧",
+        "consulting": "コンサルティング",
+        "consulting_desc": "ビジネスへの専門的なアドバイス",
+        "development": "開発",
+        "development_desc": "エンドツーエンドのソフトウェア開発",
+        "support": "サポート",
+        "support_desc": "24時間365日の技術支援"
+      },
+      "resources": {
+        "label": "リソース",
+        "btn": "リソースを見る",
+        "blog": "ブログ",
+        "blog_desc": "業界のインサイトとニュース",
+        "docs": "ドキュメント",
+        "docs_desc": "ガイドとAPIリファレンス",
+        "cases": "導入事例",
+        "cases_desc": "実際の成功事例をご紹介"
+      },
+      "ai": {
+        "label": "AI駆動開発",
+        "btn": "AIを探索する",
+        "overview": "AI概要",
+        "overview_desc": "開発へのAI統合について",
+        "tools": "ツール",
+        "tools_desc": "AIを活用したツールセット",
+        "usecases": "ユースケース",
+        "usecases_desc": "AIの実践的な活用例"
+      },
+      "button": " お問い合わせ "
+    },
+    "footer": {
+      "tagline": "共に歩んでいきましょう",
+      "copyright": "Copyright ©2023 TOMOSIA Viet Nam",
+      "companyName": "株式会社TOMOSIA",
+      "companyDescription": "TOMOSIAは、多様なIT技術を持つ優秀なエンジニアのグループです。個人の知識・経験、そしてチームワークと組織的な学びを活かし、クライアントのITの課題に対して最適なソリューションを提供することを使命としています。",
+      "contactHq": "本社: ハノイ市トゥーリエム区レドゥックト通り1番地 オーヴィエットビル2F",
+      "contactBranch": "支社: ダナン市ホアクオン区ソービエットゲティン通り1254番地 ライトハウスビル5F"
+    }
   }
 }

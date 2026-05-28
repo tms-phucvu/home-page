@@ -5,8 +5,10 @@ import { Button } from "@/shared/components/ui/button"
 import { NavMenu } from "@/shared/components/header/nav-menu"
 import { MobileMenu } from "@/shared/components/header/mobile-menu"
 import { Search } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 export default function Header() {
+  const t = useTranslations("layout.header")
   return (
     <div className="bg-background shadow-foreground/10 fixed top-0 z-50 flex h-16 w-full items-center justify-between px-4 shadow-lg md:px-10 lg:h-20 xl:px-36">
       <div className="flex items-center gap-6 xl:gap-16">
@@ -46,7 +48,7 @@ export default function Header() {
           size="lg"
           className="hidden rounded-full px-5 py-4 text-base sm:flex lg:px-8 lg:py-5 lg:text-lg"
         >
-          Inquiry
+          {t("button")}
         </Button>
         <div className="lg:hidden">
           <MobileMenu />

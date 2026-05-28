@@ -2,6 +2,7 @@
 import React, { useRef, useEffect, useState, useCallback } from "react"
 import { gsap } from "gsap"
 import { CountUp } from "@/features/top/components/effects/count-up"
+import { useTranslations } from "next-intl"
 
 export interface BentoCardProps {
   title?: string
@@ -29,42 +30,6 @@ const DEFAULT_PARTICLE_COUNT = 12
 const DEFAULT_SPOTLIGHT_RADIUS = 300
 const DEFAULT_GLOW_COLOR = "primary"
 const MOBILE_BREAKPOINT = 768
-
-const cardData: BentoCardProps[] = [
-  {
-    title: "Rapidly expanding company",
-    description:
-      "As of August 2023, we have approximately 120 employees and are rapidly expanding through aggressive recruitment. Our goal for this year is 150 employees. We can flexibly accommodate increases in staff and team size from 5 to 20 people.",
-    variant: "content",
-  },
-  {
-    title: "Japanese language & work culture",
-    description:
-      "Our BrSE and project manager team will ensure accurate translation. Furthermore, they have a deep understanding of Japanese work culture, having worked or studied in Japan.",
-    variant: "content",
-  },
-  {
-    title: "Quality control",
-    description:
-      "We have obtained ISO 9001 and ISO 27001 certifications and are preparing for CMMI. Our organizational structure includes a testing team and a PMO team for cross-project management. We always perform checks before handing over products.",
-    variant: "content",
-  },
-  {
-    statNumber: "200",
-    statLabel: "Completed Projects",
-    variant: "stat",
-  },
-  {
-    statNumber: "50",
-    statLabel: "Customers",
-    variant: "stat",
-  },
-  {
-    statNumber: "120",
-    statLabel: "Best Staff",
-    variant: "stat",
-  },
-]
 
 const createParticleElement = (
   x: number,
@@ -469,6 +434,15 @@ const MagicBento: React.FC<BentoProps> = ({
   clickEffect = true,
   enableMagnetism = true,
 }) => {
+  const t = useTranslations("homePage.whySection")
+  const cardData: BentoCardProps[] = [
+    { variant: "content", title: t("rapidly"), description: t("rapidly_desc") },
+    { variant: "content", title: t("japanese"), description: t("japanese_desc") },
+    { variant: "content", title: t("quality"), description: t("quality_desc") },
+    { variant: "stat", statNumber: "200", statLabel: t("stat_projects") },
+    { variant: "stat", statNumber: "50", statLabel: t("stat_customers") },
+    { variant: "stat", statNumber: "120", statLabel: t("stat_staff") },
+  ]
   const gridRef = useRef<HTMLDivElement>(null)
   const isMobile = useMobileDetection()
   const shouldDisableAnimations = disableAnimations || isMobile

@@ -7,11 +7,20 @@ import ServiceSection from "@/features/top/components/sections/service-section"
 import WhySection from "@/features/top/components/sections/why-section"
 import SnapScroll from "@/features/top/components/effects/snap-scroll"
 import Footer from "@/shared/components/layout/footer"
+import { getTranslations } from "next-intl/server"
 
-export default function TopPage() {
+export default async function TopPage() {
+  const t = await getTranslations("homePage.sectionLabels")
   return (
     <SnapScroll
-      sectionLabels={["About", "Services", "Why us", "Certifications", "Achievements", "Inquiry"]}
+      sectionLabels={[
+        t("about"),
+        t("services"),
+        t("whyUs"),
+        t("certifications"),
+        t("achievements"),
+        t("inquiry"),
+      ]}
     >
       <HeroSection />
       <AboutSection />
