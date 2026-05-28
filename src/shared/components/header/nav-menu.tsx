@@ -101,7 +101,7 @@ export function NavMenu() {
               {item.label}
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <div className="flex gap-8 px-10 py-3 xl:px-80">
+              <div className="flex gap-8 px-10 py-3 xl:px-45 2xl:px-80">
                 <div className="relative h-54 w-76 shrink-0 overflow-hidden rounded-md">
                   <Image
                     src={item.card.image}
