@@ -8,6 +8,17 @@
       "achievements": "実績",
       "inquiry": "お問い合わせ"
     },
+    "heroSection": {
+      "label": "TOMOSIA × Society 5.0",
+      "titleLine1": "あなたのビジネスを",
+      "titleHighlight": "Society 5.0",
+      "titleLine3": "に進めましょう！",
+      "description": "TOMOSIAは、お客様がSociety 5.0に合わせてサービスを推進できるように、能力を提供する5.0ソリューションを目指しています。",
+      "cta": "お問い合わせ",
+      "badge1": "AI Integration",
+      "badge2": "IoT Network",
+      "badge3": "Smart City"
+    },
     "aboutSection": {
       "label": "会社概要",
       "title": "TOMOSIA | 5.0ソリューションカンパニー",

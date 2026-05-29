@@ -8,6 +8,17 @@
       "achievements": "Achievements",
       "inquiry": "Inquiry"
     },
+    "heroSection": {
+      "label": "TOMOSIA × Society 5.0",
+      "titleLine1": "Advance Your Business into",
+      "titleHighlight": "Society 5.0",
+      "titleLine3": "with TOMOSIA",
+      "description": "TOMOSIA aims to be a 5.0 solutions provider — empowering clients to drive their services forward in alignment with Society 5.0.",
+      "cta": "Contact Us",
+      "badge1": "AI Integration",
+      "badge2": "IoT Network",
+      "badge3": "Smart City"
+    },
     "aboutSection": {
       "title": "TOMOSIA | 5.0 Solutions Company",
       "description": "TOMOSIA is a group of talented engineers with diverse information technology skills. Our mission is to leverage the individual knowledge and experience, as well as our teamwork and organizational learning, to derive optimal solutions to our clients' IT challenges.",
