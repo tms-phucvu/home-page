@@ -24,7 +24,7 @@ export default function AchievementSection() {
   const t = useTranslations("homePage.achievementSection")
 
   return (
-    <section className="bg-border/50 flex min-h-screen w-full items-center justify-center px-4 sm:px-18 lg:px-36">
+    <section className="bg-border/50 flex h-dvh w-full items-center justify-center px-4 sm:px-18 lg:px-36">
       <Carousel opts={{ align: "start" }} className="w-full">
         <div className="mb-2 flex items-center justify-between xl:mb-8">
           <h2 className="text-2xl font-medium xl:text-5xl">{t("heading")}</h2>

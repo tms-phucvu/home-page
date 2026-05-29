@@ -24,7 +24,7 @@ export default function Footer() {
   const tNav = useTranslations("layout.header")
 
   return (
-    <section className="bg-border grid h-screen w-full grid-cols-1 pt-16 sm:grid-cols-3">
+    <section className="bg-border grid h-dvh w-full grid-cols-1 pt-16 sm:grid-cols-3">
       <div className="flex flex-col items-baseline justify-center px-3 max-md:text-sm sm:col-span-2 sm:px-16 xl:px-36">
         <div className="flex flex-col gap-8 max-md:gap-3">
           <h1 className="text-4xl font-bold xl:text-5xl">{t("tagline")}</h1>

@@ -210,7 +210,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative flex h-screen w-full items-center justify-center overflow-hidden"
+      className="relative flex h-dvh w-full items-center justify-center overflow-hidden"
       style={{
         background: BG_BASE,
         // CSS custom property so other components can reference --primary

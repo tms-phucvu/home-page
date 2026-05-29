@@ -27,7 +27,7 @@ export default function FormSection() {
   const inquiryItems = t.raw("inquiryItems") as string[]
 
   return (
-    <section className="flex min-h-screen w-full items-center justify-center p-8">
+    <section className="flex h-dvh w-full items-center justify-center p-8">
       <div className="border-border grid w-full max-w-4xl grid-cols-1 overflow-hidden sm:rounded-2xl sm:border lg:grid-cols-3">
         {/* Gradient panel with falling elements */}
         <div className="relative flex items-center justify-center p-6 max-lg:hidden lg:col-span-1">
