@@ -1,4 +1,5 @@
 "use client"
+import FallingElementsPanel from "@/features/top/components/effects/falling-elements-panel"
 import { Button } from "@/shared/components/ui/button"
 import {
   Combobox,
@@ -28,9 +29,9 @@ export default function FormSection() {
   return (
     <section className="flex min-h-screen w-full items-center justify-center p-8">
       <div className="border-border grid w-full max-w-4xl grid-cols-1 overflow-hidden sm:rounded-2xl sm:border lg:grid-cols-3">
-        {/* Gradient panel */}
+        {/* Gradient panel with falling elements */}
         <div className="relative flex items-center justify-center p-6 max-lg:hidden lg:col-span-1">
-          <div className="h-full w-full rounded-xl bg-linear-to-br from-cyan-100 to-pink-100"></div>
+          <FallingElementsPanel />
         </div>
 
         {/* Form panel */}
