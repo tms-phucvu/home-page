@@ -31,7 +31,7 @@ export default function CertificationSection() {
   const mobileImages = locale === "ja" ? jaMobileImages : enMobileImages
 
   return (
-    <section className="flex h-screen w-full flex-col items-center justify-center gap-4 px-4">
+    <section className="flex h-dvh w-full flex-col items-center justify-center gap-4 px-4">
       <h1 className="text-2xl font-bold md:text-5xl">{t("heading")}</h1>
       <div className="mb-10 max-w-md text-center text-xs md:max-w-xl md:text-lg">
         {t("description")}

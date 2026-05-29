@@ -25,7 +25,7 @@ export default function ServiceSection() {
   const t = useTranslations("homePage.serviceSection")
 
   return (
-    <section className="bg-border/50 flex min-h-screen w-full items-center justify-center px-6 pt-8 sm:px-20 2xl:px-64">
+    <section className="bg-border/50 flex h-dvh w-full items-center justify-center px-6 pt-8 sm:px-20 2xl:px-64">
       <Carousel opts={{ align: "start", loop: true }} className="w-full">
         <div className="mb-1.5 flex flex-col items-center justify-center gap-1 sm:mb-4 sm:gap-3">
           <h2 className="text-xl font-medium lg:text-3xl">{t("heading")}</h2>

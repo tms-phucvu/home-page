@@ -7,7 +7,7 @@ import { useTranslations } from "next-intl"
 export default function AboutSection() {
   const t = useTranslations("homePage.aboutSection")
   return (
-    <section className="relative flex h-screen w-full items-center justify-center overflow-hidden">
+    <section className="relative flex h-dvh w-full items-center justify-center overflow-hidden">
       {/* Video Background */}
       <video
         className="absolute inset-0 h-full w-full object-cover"
